@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SportsStore.Models
 {
-    public class ApplicationDbContex:DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContex(DbContextOptions<ApplicationDbContex> options): base(options) { }
+        public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options): base(options) { }
         public DbSet<Product> Products { get; set; }
     }
 }
