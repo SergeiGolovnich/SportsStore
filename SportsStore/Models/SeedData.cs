@@ -13,6 +13,7 @@ namespace SportsStore.Models
         public static void EnsurePopulated(IApplicationBuilder app)
         {
             ApplicationDbContext context = app.ApplicationServices.GetRequiredService<ApplicationDbContext>();
+            
             if (!context.Products.Any())
             {
                 context.Products.AddRange(
@@ -57,7 +58,8 @@ namespace SportsStore.Models
                       Description = "Improve brain efficiency by 75%",
                       Category = "Chess",
                       Price = 16
-                  }, new Product
+                  }, 
+                  new Product
                   {
                       Name = "Unsteady Chair",
                       Description = "Secretly give your opponent а disadvantage",
