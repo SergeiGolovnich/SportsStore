@@ -5,7 +5,7 @@
         <span class="pull-right label label-primary"> @Model.Price.ToString("c") </span>
     </hЗ>
     <form id="@Model.ProductId" asp-action="AddToCart" asp-controller="Cart" method="post">
-        <input asp-for="ProductId" type="hidden" />
+        <input asp-for="productId" type="hidden" />
         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
         <span class="lead">
             @Model.Description
