@@ -5,12 +5,11 @@
         <span class="pull-right label label-primary"> @Model.Price.ToString("c") </span>
     </hЗ>
     <form id="@Model.ProductId" asp-action="AddToCart" asp-controller="Cart" method="post">
-        <input asp-for="productId" type="hidden" />
+        <input asp-for="ProductId" type="hidden" />
         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
         <span class="lead">
             @Model.Description
             <button type="submit" class="btn btn-success btn-sm pull-right">Add To Cart</button>
         </span>
     </form>
-    <span class="lead">@Model.Description</span>
 </div>
