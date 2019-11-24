@@ -13,7 +13,6 @@ namespace SportsStore.Models
             context = ctx;
         }
         public IEnumerable<Product> Products => context.Products;
-
         public void SaveProduct(Product product)
         {
             if(product.ProductId == 0)
@@ -32,6 +31,16 @@ namespace SportsStore.Models
                 }
             }
             context.SaveChanges();
+        }
+        public Product DeleteProduct(int productId)
+        {
+            Product dbEntity = context.Products.FirstOrDefault(p => p.ProductId == productId);
+            if(dbEntity != null)
+            {
+                context.Products.Remove(dbEntity);
+                context.SaveChanges();
+            }
+            return dbEntity;
         }
     }
 }
